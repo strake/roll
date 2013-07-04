@@ -8,7 +8,7 @@
 
 int rfd;
 
-long roll1 (long n, long m) {
+long roll1 (long m) {
 	double lf = ceil (log2 (m)/8);
 	long l = lf;
 	long x = 0;
@@ -36,7 +36,7 @@ int main (int argc, char *argu[]) {
 		m = strtoul (argu[ii], &argu[ii], 10);
 		if (argu[ii][0]) errx (-1, "bad format");
 		for (; n > 0; n--) {
-			printf ("%ld%c", roll1 (n, m), n == 1 ? '\n' : '\t');
+			printf ("%ld%c", roll1 (m), n == 1 ? '\n' : '\t');
 		}
 	}
 	return 0;
